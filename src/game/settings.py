@@ -1,7 +1,14 @@
 # src/game/settings.py
+# Import libraries
+import pygame
+# Name
+NAME = "Pong Better"
+# Text
+CREATOR = "Creator: Renan Lucas"
 # Screen
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
+SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.SCALED)
 # FPS 
 FPS = 60
 # Colors
@@ -12,3 +19,4 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 # Position
 TPLEFT = (10 , 10)
+CREATOR_POSITION = (10 , 25)

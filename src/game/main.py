@@ -1,32 +1,49 @@
 # src/game/main.py
 # Import libraries
 import pygame
+import sys
 from settings import *
 from font import * 
 from clock import *
-# Screen config
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-# Screen name
-pygame.display.set_caption("Pong Better")
+# Screen name 
+pygame.display.set_caption(NAME)
 #  Initialize Pygame   
 pygame.init()
-# Main Loop
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+# Draw function
+def draw():
     # Color for screen
-    screen.fill(WHITE)
+    SCREEN.fill(BLACK)
     # Display FPS in screen
-    fps_text = FONT.render(f"FPS: {int(CLOCK.get_fps())}", True, (BLACK))
+    fps_text = FONT.render(f"FPS: {int(CLOCK.get_fps())}", True, (WHITE))
+    # Display creater in screen
+    creator = FONT.render((CREATOR), True, (WHITE))
     # Draw FPS in screen
-    screen.blit(fps_text, (TPLEFT))
+    SCREEN.blit(fps_text, (TPLEFT))
+    # Draw Creator in screen
+    SCREEN.blit(creator, (CREATOR_POSITION))
     # Update screen
-    pygame.display.flip()
-    # FPS in screen
+    pygame.display.update()
+    # Clock Tick
     CLOCK.tick(FPS)
 
-pygame.quit()    
+# Main function
+def main():
+    # Window is running
+    running = True
+    # Event loop
+    while running:
+        # Pygame Events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+               running = False
+        # Execute Draw() Function
+        draw()
+    # Quit pygame
+    pygame.quit()
+    sys.exit()
+
+# Execute main()    
+if __name__ == "__main__":
+    main()
 
 
