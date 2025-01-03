@@ -2,13 +2,48 @@
 # Import libraries
 import pygame
 import sys
-from settings import *
-from font import * 
-from clock import *
+import os
+# Variabels
+# Name
+NAME = "Pong Better"
+LAUCHER_NAME = "Pong Better Laucher"
+# Text
+CREATOR = "Creator: Renan Lucas"
+# Screen
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT), pygame.SCALED)
+# FPS 
+FPS = 60
+# Colors
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+CYAN = (0, 255, 255)
+# Position
+TPLEFT = (10 , 10)
+CREATOR_POSITION = (10 , 25)
+# Mouse
+PLAY_MOUSE_POS = pygame.mouse.get_pos()
+# Laucher Resolution
+LAUCHER_SCREEN = "400x300"
+# Laucher Color
+LWHITE = "white"
+# Ignore pygame mensage
+sys.stdout = open(os.devnull, 'w')
+#  Initialize Pygame
+pygame.init()
+# Back console
+sys.stdout = sys.__stdout__
 # Screen name 
 pygame.display.set_caption(NAME)
-#  Initialize Pygame   
-pygame.init()
+# Init clock
+CLOCK = pygame.time.Clock()
+# Init font
+pygame.font.init()
+FONT = pygame.font.Font(None, 24)
 # Draw function
 def draw():
     # Color for screen
@@ -26,8 +61,8 @@ def draw():
     # Clock Tick
     CLOCK.tick(FPS)
 
-# Main function
-def main():
+# game function
+def game():
     # Window is running
     running = True
     # Event loop
@@ -40,10 +75,12 @@ def main():
         draw()
     # Quit pygame
     pygame.quit()
-    sys.exit()
+    print(f"Success : {NAME} is closed")
+    sys.exit(0)
+
 
 # Execute main()    
 if __name__ == "__main__":
-    main()
+    game()
 
 

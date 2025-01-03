@@ -1,1 +1,3 @@
+# ./requirements.txt
 pygame
+pygame-menu

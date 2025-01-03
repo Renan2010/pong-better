@@ -3,6 +3,7 @@
 import pygame
 # Name
 NAME = "Pong Better"
+LAUCHER_NAME = "Pong Better Laucher"
 # Text
 CREATOR = "Creator: Renan Lucas"
 # Screen
@@ -17,6 +18,13 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+CYAN = (0, 255, 255)
 # Position
 TPLEFT = (10 , 10)
 CREATOR_POSITION = (10 , 25)
+# Mouse
+PLAY_MOUSE_POS = pygame.mouse.get_pos()
+# Laucher Resolution
+LAUCHER_SCREEN = "400x300"
+# Laucher Color
+LWHITE = "white"
